@@ -11,15 +11,11 @@ define(['app'], function (app) {
                var $window = $(window);
                var currentScrollPos = $window.scrollTop();
                var currHeight = this.scrollHeight - diff;
-               console.log(currHeight);
-               console.log(Number(diff));
                if(currHeight > height){
                     $this.height(0)
                         .height(currHeight);
-                        //$('.bigbox').css('height',currHeight);
                         $window.scrollTop(currentScrollPos);
                }
-               console.log(currHeight);
             });
         }
         return {
