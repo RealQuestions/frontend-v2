@@ -6,16 +6,33 @@ define(['app'], function (app) {
             var height = $element.outerHeight();
             var $this = $(this);
             var diff = (isNaN(Number($this.css('paddingBottom')))?0:Number($(this).css('paddingBottom'))) + (isNaN(Number($this.css('paddingTop')))?0:Number($(this).css('paddingTop')));
+            var lastHeight = 0;
+            var paragraphs = 1;
+            var question = "";
             $element.on('keyup',function(){
                var $this = $(this).parent();
                var $window = $(window);
                var currentScrollPos = $window.scrollTop();
                var currHeight = this.scrollHeight - diff;
-               if(currHeight > height){
+               var value = $(this).val();
+               if(value.split("\n").length > paragraphs){
+                   //send to the reader api
+                   if(value != question){
+                       question = value;
+                       console.log(value);
+                   }
+                   paragraphs = value.split("\n").length;
+               }else if(value.split("\n").length<paragraphs){
+                   paragraphs = value.split("\n").length;
+                }
+
+               if(currHeight > height || currHeight < lastHeight){
                     $this.height(0)
                         .height(currHeight);
                         $window.scrollTop(currentScrollPos);
+                    lastHeight = currHeight;
                }
+               
             });
         }
         return {

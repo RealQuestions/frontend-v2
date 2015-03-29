@@ -4,7 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "node-sass": "",
-    "gulp": "^3.8.0",
+    "gulp": "",
     "gulp-spritesmith":"",
     "gulp-autoprefixer": "^0.0.6",
     "gulp-concat":"",
