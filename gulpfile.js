@@ -16,7 +16,7 @@ gulp.task('meserver',function(){
         livereload: true,
         open: true,
         port: 9090,
-        host: '10.0.2.15',
+        host: '0.0.0.0',
         log: 'debug'
     }));
 });

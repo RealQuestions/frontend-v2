@@ -1,6 +1,6 @@
 {
-  "name": "genesisFront",
-  "version": "0.0.0",
+  "name": "RealQuestionsFront",
+  "version": "v0.0.0",
   "dependencies": {},
   "devDependencies": {
     "node-sass": "",
