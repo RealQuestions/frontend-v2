@@ -2,6 +2,8 @@
 
 var gulp = require('gulp');
 
+var reactify = require('gulp-reactify');
+
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
@@ -22,6 +24,9 @@ gulp.task('styles', ['wiredep'],  function () {
 
 gulp.task('scripts', function () {
   return gulp.src('src/{app,app/components}/**/*.js')
+    .pipe($.reactify({
+        reactTools: require('react-tools')
+    }))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.size());
