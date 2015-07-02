@@ -1,8 +1,8 @@
 node_modules
 bower_components
-logs
-run
-tmp
+logs/*
+run/*
+tmp/*
 .tmp
 .sass-cache
 *.swp
